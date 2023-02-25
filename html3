@@ -1,0 +1,353 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google font CDN link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <title>Yash jariwala Frontend 1 AccioJob 21 January 2023</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="input-items">
+          <label for="text-field">Text Field <span>*</span></label>
+          <br />
+          <input
+            type="text"
+            id="text-field"
+            placeholder="Input Text"
+            required
+          />
+        </div>
+        <div class="input-items">
+          <label for="select-items"
+            >Select Field <i class="fa-solid fa-circle-info"></i
+          ></label>
+          <br />
+          <select name="select-fields" id="select-items">
+            <option value="select" disabled selected>Select</option>
+            <option value="item-1">item 1</option>
+            <option value="item-2">item 2</option>
+            <option value="item-3">item 3</option>
+            <option value="item-3">item 4</option>
+            <option value="item-3">item 5</option>
+          </select>
+        </div>
+        <div class="input-items">
+          <label for="text-area"
+            >Text Area <i class="fa-solid fa-circle-info"></i
+          ></label>
+          <br />
+          <textarea
+            name="text-area"
+            id="text-area"
+            placeholder="Text Area"
+          ></textarea>
+        </div>
+        <div class="input-items">
+          <label for="text-addOn"
+            >Text Field with Add-ons <span>*</span></label
+          >
+          <div class="text-addOn" id="text-field-addOn">
+            <label for="text-input">Label</label>
+            <input
+              type="text"
+              id="text-input"
+              placeholder="Input Text"
+              required
+            />
+            <button>Button</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="search-field" id="search">
+          <div class="search">
+            <iconify-icon
+              class="search-icon"
+              icon="material-symbols:search-rounded"
+              style="color: rgb(136, 131, 131)"
+              width="20"
+              height="20"
+            ></iconify-icon>
+          </div>
+          <input type="text" id="text-input" placeholder="Search" />
+        </div>
+        <div class="input-items increment-decrement">
+          <div class="increment-decrement-item decrement">
+            <iconify-icon
+              icon="ic:baseline-minus"
+              style="color: rgb(136, 131, 131)"
+              width="14"
+              height="14"
+            ></iconify-icon>
+          </div>
+          <div class="increment-decrement-item display">1</div>
+          <div class="increment-decrement-item increment">
+            <iconify-icon
+              icon="material-symbols:add"
+              style="color: rgb(136, 131, 131)"
+              width="14"
+              height="14"
+            ></iconify-icon>
+          </div>
+        </div>
+        <div class="clickable-inputs checkbox">
+          <input type="checkbox" value="checkbox"/> Checkbox
+        </div>
+        <div class="clickable-inputs radio">
+          <input type="radio" value="radio" checked /> Radio Button
+        </div>
+        <div class="clickable-inputs switch-btn">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <p>Switch</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+ 215  
+style.css
+@@ -0,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 250px;
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    padding-right: 50px;
+}
+
+.input-items {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-items label {
+    font-size: 14px;
+}
+
+.input-items label span {
+    color: red;
+}
+
+.input-items label i {
+    color: rgb(163 169 176);
+}
+
+.input-items input,
+.input-items textarea,
+.input-items select {
+    height: 32px;
+    border: 1px solid rgb(195 185 185);
+    outline: none;
+    border-radius: 7px;
+    margin-top: 8px;
+    padding: 5px 15px;
+    font-family: 'Inter', sans-serif;
+    color: rgb(136, 131, 131);
+}
+
+#text-area {
+    width: 100%;
+    height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.container-item input,
+.container-item select {
+    width: 100%;
+}
+
+.text-addOn,
+.search-field {
+    margin-top: 8px;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    height: 32px;
+    width: 100%;
+    border: 1px solid rgb(195 185 185);
+    border-radius: 7px;
+}
+
+.text-addOn > input,
+.search-field > input {
+    height: 100%;
+    margin-top: 0;
+    border: none;
+    border-radius: none;
+}
+.text-addOn > button {
+    height: 100%;
+    padding: 0 25px;
+    background-color: #fff;
+    border: none;
+    border-left: 1px solid rgb(195 185 185);
+    border-radius: 7px;
+}
+.text-addOn > label {
+    padding: 0 15px;
+}
+
+.right {
+    width: 50%;
+    padding-left: 50px;
+    padding-top: 18px;
+}
+
+.search-icon {
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.increment-decrement {
+    width: 75px;
+    height: 32px;
+    padding: 0 10px;
+    background-color: #fff;
+    border: 1px solid rgb(195 185 185);
+    border-radius: 7px;
+    display: flex;
+}
+
+.increment-decrement-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.increment-decrement .decrement,
+.increment-decrement .increment {
+    width: 20%;
+}
+
+.increment-decrement .display {
+    width: 60%;
+    color: rgb(136, 131, 131);
+}
+
+.checkbox {
+    display: flex;
+}
+.clickable-inputs {
+    margin-bottom: 13px;
+    font-size: 14px;
+    color: rgb(136, 131, 131);
+}
+.clickable-inputs input {
+    width: max-content;
+    margin-right: 10px;
+}
+
+/* switch */
+.switch-btn {
+    display: flex;
+}
+.switch-btn p{
+    margin-left: 10px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 16px;
+  }
+
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
